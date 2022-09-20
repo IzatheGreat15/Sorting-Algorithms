@@ -9,17 +9,17 @@ void swap(int *one, int *two){
 
 void gnomeSort(int A[], int size){
   int ctr;
-  for(ctr = 1; ctr < size;){
-    if(ctr == 0){
+  for(ctr = 0; ctr < size;){
+    if(ctr == -1){
         ctr++;
     }
-    //if node before the ctr is larger; swap and move to previous node
-    if(A[ctr - 1] > A[ctr]){
-        swap(&A[ctr - 1], &A[ctr]);
+    //if node greater than the node after it; swap and go back to previous node
+    if(A[ctr] > A[ctr + 1]){
+        swap(&A[ctr], &A[ctr + 1]);
         ctr--;
     }
-    //if node before the ctr is smaller or equal; move to next node
-    if(A[ctr - 1] <= A[ctr]){
+    //if node is less than or equal to the node after it; proceed to next node
+    if(A[ctr] <= A[ctr + 1]){
         ctr++;
     }
   }
