@@ -24,8 +24,7 @@ void countingSort(int A[], int size){
   
   //place elements in sorted array
   for(x = 0; x < size; x++){
-    sorted[count[A[x]] - 1] = A[x];
-    count[A[x]]--;
+    sorted[--count[A[x]]] = A[x];
   }
   
   //transfer sorted array to original array
