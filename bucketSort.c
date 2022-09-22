@@ -51,9 +51,9 @@ void bucketSort(float A[], int size, int no_of_buckets){
 }
 
 int main() {
-  float arr[] = { 9.8 , 0.6 , 10.1 , 1.9 , 3.07 , 3.04 , 5.0 , 8.0 , 4.8 , 7.68};
+  float arr[] = { 9.0 , 10.6 , 10.1 , 1.9 , 3.07 , 3.04 , 5.0 , 8.0 , 4.8 , 99};
   int size = sizeof(arr)/sizeof(arr[0]);
-  bucketSort(arr, size, 5);
+  bucketSort(arr, size, 10);
 
   //display sorted array
   int x;
