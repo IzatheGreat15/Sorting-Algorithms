@@ -17,10 +17,10 @@ int findMax(int A[], int size){
 void countingSort(int A[], int size, int exp){
     int divide = exp / 10;
     //find largest digit based on exp
-    int max = A[0] / divide % exp; 
+    int max = A[0] / divide % 10; 
     int x;
     for(x = 0; x < size; x++){
-        max = (max < A[x] / divide % exp) ? A[x] / divide % exp : max;
+        max = (max < A[x] / divide % 10) ? A[x] / divide % 10 : max;
     }
     
     //create sorted and count array
@@ -29,7 +29,7 @@ void countingSort(int A[], int size, int exp){
 
     //count each occurences of number
     for(x = 0; x < size; x++){
-        count[A[x] / divide % exp]++;
+        count[A[x] / divide % 10]++;
     }
 
     //store cummulative sum
@@ -38,8 +38,8 @@ void countingSort(int A[], int size, int exp){
     }
     //place elements in sorted array
     for(x = size - 1; x >= 0; x--){
-        sorted[count[A[x] / divide % exp] - 1] = A[x];
-        count[A[x] / divide % exp]--;
+        sorted[count[A[x] / divide % 10] - 1] = A[x];
+        count[A[x] / divide % 10]--;
     }
 
     //transfer sorted array to original array
