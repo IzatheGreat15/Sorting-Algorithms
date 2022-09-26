@@ -51,7 +51,7 @@ void tournamentSort(int A[], int size){
 }
 
 int main() {
-  int arr[] = {10, 8, 2, 9, 1, 4, 12, 9, -1};
+  int arr[] = {10, 8, 2, 9, 1, 4, 12, 9, -1, -17};
   int size = sizeof(arr)/sizeof(arr[0]);
   tournamentSort(arr, size);
 

@@ -41,6 +41,7 @@ List deleteFirst(List *head){
 
 void inserttoLL(List *head, List node){
   List *trav = head;
+  node->link = *trav;
   *trav = node;
 }
 
@@ -78,9 +79,10 @@ List strandSort(List *head){
     /* insert first element of unsorted list to sublist */
     trav = head;
     inserttoLL(&subList, deleteFirst(trav));
-
+printf("\n%d\n", (*travS)->data);
     /* insert to sublist elements that are greater than the last inserted element to sublist */
     for(; *trav != NULL;){
+      printf("%d ", (*trav)->data);
       if((*travS)->data <= (*trav)->data){
         temp = *trav;
 
@@ -100,7 +102,7 @@ List strandSort(List *head){
 }
 
 int main() {
-  int arr[] = {10, 8, 2, 9, 1, 4, 12};
+  int arr[] = {10, 8, 2, 9, 1, 4, 9, 12, 1, -1};
   int size = sizeof(arr)/sizeof(arr[0]);
 
   List head = convertArraytoLL(arr, size);

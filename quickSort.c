@@ -120,7 +120,7 @@ void quickSortv1(int A[], int start, int end){
 }
 
 int main() {
-  int arr[] = {3, 6, 4, 0, 2, 8};
+  int arr[] = {3, 6, 4, 0, 2, 8, -1, -5};
   int size = sizeof(arr)/sizeof(arr[0]);
   quickSortv1(arr, 0, size - 1);
 
