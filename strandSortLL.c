@@ -75,9 +75,11 @@ List strandSort(List *head){
   List *travS = &subList;
   
   while(*head != NULL){
+    /* insert first element of unsorted list to sublist */
     trav = head;
     inserttoLL(&subList, deleteFirst(trav));
 
+    /* insert to sublist elements that are greater than the last inserted element to sublist */
     for(; *trav != NULL;){
       if((*travS)->data <= (*trav)->data){
         temp = *trav;
@@ -89,6 +91,8 @@ List strandSort(List *head){
         trav = &(*trav)->link;
       }
     }
+
+    /* merge output and sublist */
     output = mergeLL(&subList, &output);
   }
 
